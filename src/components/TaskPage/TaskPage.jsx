@@ -2,7 +2,7 @@ import moment from 'moment';
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getDatabase, ref, get, child, set } from "firebase/database";
+import { getDatabase, ref, get, child} from "firebase/database";
 import { ROUTES } from '../../routes/routes';
 import { generateID } from '../../utils/utils';
 import { Button } from "../Controls/Button/Button";
@@ -18,7 +18,6 @@ export const TaskPage = () => {
     const todos = useSelector(state => state.todos);
     const userEmail = useSelector(state => state.userEmail);
     const selectedDay = useSelector(state => state.selectedDay);
-    const db = getDatabase();
 
     const days = [{
         id: generateID(),

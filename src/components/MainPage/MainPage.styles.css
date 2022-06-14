@@ -1,0 +1,8 @@
+.link {
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.link:hover {
+    filter: brightness(0) saturate(100%) invert(46%) sepia(32%) saturate(4492%) hue-rotate(349deg) brightness(103%) contrast(101%) drop-shadow(0 0 0.5rem #e3b322);
+}

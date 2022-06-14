@@ -1,0 +1,75 @@
+.add_task_block {
+    display: flex;
+    flex-direction: column;
+}
+
+.task_descritpion {
+    resize: none;
+    width: 90%;
+    align-self: center;
+    padding: 5px;
+    margin: 5px;
+}
+
+.message {
+    font-size: 14px;
+    color: #1aaf64;
+    margin-top: 10px;
+}
+
+.turn_btn {
+    border: none;
+    align-self: flex-start;
+    width: 30px;
+    height: 40px;
+    font-weight: bold;
+    background-color: white;
+    font-size: 20px;
+}
+
+.task_title {
+    height: 25px;
+    font-size: 20px;
+    padding: 2px;
+    width: 95%;
+    align-self: center;
+    margin: 5px;
+}
+
+label {
+    color: #ff621a;
+}
+
+@media (min-width:425px){
+    .task_title{
+        width: 80%;
+        font-size: 20px;
+    }
+    .task_descritpion {
+        width: 75%;
+        font-size: 15px;
+    }
+    label {
+        font-size: 18px;
+    }
+    .message {
+        font-size: 17px;
+    }
+}
+
+@media (min-width:768px){
+    .task_title{
+        width: 70%;
+        font-size: 25px;
+    }
+    .task_descritpion {
+        width: 70%;
+        font-size: 18px;
+    }
+    label {
+        font-size: 20px;
+    }
+    .message {
+        font-size: 20px;
+    }
+}

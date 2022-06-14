@@ -1,0 +1,42 @@
+.date_item {
+    border: 1px solid #ff621a;
+    color: #ff621a;
+    border-radius: 12px;
+    margin: 5px;
+    background-color: #fff5ec ;
+}
+
+.date_text {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.checked {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 12px;
+}
+
+.complete_dott{
+    width: 7px;
+    height: 7px;
+    background-color: #fff5ec;
+    border-radius: 50%;
+}
+
+.uncomplete_dott {
+    width: 7px;
+    height: 7px;
+    background-color: #ff621a;
+    border-radius: 50%;
+}
+
+.dotts {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}

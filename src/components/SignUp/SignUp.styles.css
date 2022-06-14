@@ -1,0 +1,19 @@
+.signup_block {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+@media (min-width:425px){
+    .signup_block{
+        max-width: 80%;
+    }
+}
+
+@media (min-width:768px){
+    .signup_block{
+        max-width: 55%;
+    }
+}

@@ -1,0 +1,48 @@
+.todo_item, .item_checked{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  align-self: center;
+  width: 90%;
+  justify-content: space-around;
+}
+
+.item_checked {
+  opacity: 0.5;
+}
+
+.todo_link{
+  text-decoration: none;
+  width: 20px;
+  height: 20px;
+  text-decoration: none;
+  background-image: url(https://img.icons8.com/material-outlined/344/visible--v1.png);
+  background-repeat: no-repeat;
+  background-position: left; 
+  background-size: 100%;
+}
+
+.todo_title {
+  border: none;
+  font-size: 20px;
+  padding: 5px;
+  width: 70%;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+}
+
+@media (min-width:425px){
+  .todo_item, .item_checked{
+      max-width: 70%;
+  }
+}
+
+@media (min-width:768px){
+  .todo_item, .item_checked{
+    max-width: 50%;
+}
+}

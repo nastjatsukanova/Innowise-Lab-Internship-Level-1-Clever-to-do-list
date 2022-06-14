@@ -1,0 +1,57 @@
+.days_block {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}
+
+.add_btn {
+    background-color: #ff621a;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    padding: 10px;
+    cursor: pointer;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.add_btn:hover{
+    background-color: #e75816;
+}
+
+.todo_list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo_link{
+    text-decoration: none;
+    width: 20px;
+    height: 20px;
+    text-decoration: none;
+    background-image: url(https://img.icons8.com/material-outlined/344/visible--v1.png);
+    background-repeat: no-repeat;
+    background-position: left; 
+    background-size: 100%;
+}
+
+.turn_btn {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+@media (min-width:425px){
+    .add_btn{
+        width: 80%;
+    }
+}
+
+@media (min-width:768px){
+    .add_btn{
+        width: 70%;
+    }
+}

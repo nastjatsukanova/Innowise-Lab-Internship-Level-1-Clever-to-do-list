@@ -7,6 +7,7 @@ import { Input } from "../Controls/Input/Input";
 import { ROUTES } from "../../routes/routes";
 import { generateID } from "../../utils/utils";
 import { saveTodos } from "../../store/actions/saveTodos";
+import { useInput } from "./useInput";
 import "./AddTaskPage.styles.css";
 
 export const AddTaskPage = () => {
@@ -16,28 +17,24 @@ export const AddTaskPage = () => {
     const todos = useSelector(state => state.todos);
     const userEmail = useSelector(state => state.userEmail);
     const selectedDay = useSelector(state => state.selectedDay);
-    const [taskTitle, setTaskTitle] = useState("");
-    const [taskDescription, setTaskDescription] = useState("");
     const [showMassage, setShowMessage] = useState(false);
-
-    const setTaskTitleHandler = (e) => setTaskTitle(e.target.value);
-
-    const setTaskDescriptionHandler = (e) => setTaskDescription(e.target.value);
+    const title = useInput();
+    const description = useInput();
 
     const addTask = () => {
-        if (taskTitle.trim() && taskDescription.trim()){
+        if (title.value.trim() && description.value.trim()){
             const todo = {
                 id:generateID(),
-                title: taskTitle,
-                description: taskDescription,
+                title: title.value,
+                description: description.value,
                 date: selectedDay,
                 created_by: userEmail,
                 done: false
             };
+            title.reset();
+            description.reset();
             (set(ref(db, "todos/"), [...todos, todo]));
             dispatch(saveTodos([...todos, todo]));
-            setTaskTitle("");
-            setTaskDescription("");
             setShowMessage(true);
         }
         else alert("Please, fill all fields");
@@ -54,9 +51,9 @@ export const AddTaskPage = () => {
         <div className="add_task_block">
             <Button onClick={turnToTaskPage} className="turn_btn" title="<"/>
             <label>Add title of the task</label>
-            <Input className="task_title" onChange={setTaskTitleHandler} type="text" placeholder="Enter title" value={taskTitle}/>
+            <Input className="task_title" onChange={title.changeInputHandler} type="text" placeholder="Enter title" value={title.value}/>
             <label>Add description</label>
-            <textarea className="task_descritpion" placeholder="Enter descritpion" rows="5" cols="30" onChange={setTaskDescriptionHandler} value={taskDescription}>d</textarea>
+            <textarea className="task_descritpion" placeholder="Enter descritpion" rows="5" cols="30" onChange={description.changeInputHandler} value={description.value} />
             <Button className="add_btn" type="button" title="Add new task" onClick={addTask}/>
             {showMassage && <div className="message">Task is added successfully!</div>}
         </div>
